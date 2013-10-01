@@ -16,7 +16,7 @@ public class UshahidiExtensions {
 	} // printIncident(PrintWriter, UshahidiIncident)
 	
 	public static UshahidiIncidentList UshahidiIncidentList() {
-		
+		// STUB
 		return null;
 	} // UshahidiIncidentList()
 	
@@ -24,8 +24,8 @@ public class UshahidiExtensions {
 		int currentId, largest, smallest;
 		smallest = 0;
 		largest = 0;
-		UshahidiIncident small;
-		UshahidiIncident big;
+		UshahidiIncident small = UshahidiIncident();
+		UshahidiIncident big = UshahidiIncident();
 		UshahidiIncident current;
 		PrintWriter pen = new PrintWriter(System.out, true);
 		
@@ -40,6 +40,11 @@ public class UshahidiExtensions {
 				smallest = currentId;
 				small = current;
 			} // if
+			
+			if (! client.hasMoreIncidents()) {
+				break;
+			}
+			
 		} // for
 		
 		pen.println("Lowest ID\n");
@@ -73,6 +78,10 @@ public class UshahidiExtensions {
 			if (afterStart && afterEnd == false) {
 				printIncident(pen, current);
 			}
+			
+			if (afterEnd) {
+				break;
+			}
 		}
 	} // identifyIncidents(UshahidiClient, GregorianCalendar, GregorianCalendar)
 	
@@ -99,6 +108,10 @@ public class UshahidiExtensions {
 			
 			if (afterStart && afterEnd == false) {
 				found.addIncident(current);
+			}
+			
+			if (afterEnd) {
+				break;
 			}
 		}
 		
