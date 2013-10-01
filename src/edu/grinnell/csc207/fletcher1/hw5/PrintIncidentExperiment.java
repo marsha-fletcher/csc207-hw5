@@ -20,7 +20,7 @@ public class PrintIncidentExperiment {
 	        UshahidiExtensions.printIncident(pen, client.nextIncident());
 
 	        // One that requires connecting to the server
-	        UshahidiClient webclient = new UshahidiWebClient("https://mightymoriver.crowdmap.com/");
+	        UshahidiClient webclient = new UshahidiWebClient("http://burgermap.org/");
 	        UshahidiExtensions.printIncident(pen, webclient.nextIncident());
 	    } // main(String[])
 }
