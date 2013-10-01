@@ -36,7 +36,7 @@ public class UshahidiExtensions {
 				largest = currentId;
 				big = current;
 			} // if
-			if (currentId > smallest) {
+			if (currentId < smallest) {
 				smallest = currentId;
 				small = current;
 			} // if
@@ -74,12 +74,36 @@ public class UshahidiExtensions {
 				printIncident(pen, current);
 			}
 		}
-	} // identifyIncidents()
+	} // identifyIncidents(UshahidiClient, GregorianCalendar, GregorianCalendar)
 	
-	public static UshahidiIncident[] selectIncidents(GregorianCalendar start, 
-			GregorianCalendar end) {
+	public static UshahidiIncidentList selectIncidents(UshahidiClient client, 
+			GregorianCalendar start, GregorianCalendar end) throws Exception {
 		
-		return null;
+		boolean afterStart = false;
+		boolean afterEnd = false;
+		UshahidiIncident current;
+		GregorianCalendar currentDate;
+		UshahidiIncidentList found = UshahidiIncidentList();
+		
+		for (client.hasMoreIncidents();;) {
+			current = client.nextIncident();
+			currentDate = (GregorianCalendar) current.getDate();
+			
+			if (currentDate == start) {
+				afterStart = true;
+			}
+			
+			if (currentDate == end) {
+				afterEnd = true;
+			}
+			
+			if (afterStart && afterEnd == false) {
+				found.addIncident(current);
+			}
+		}
+		
+		return found;
+		
 	} // identifyIncidents(GregorianCalendar, GregorianCalender)
 	
 } // UshahidiExtensions
