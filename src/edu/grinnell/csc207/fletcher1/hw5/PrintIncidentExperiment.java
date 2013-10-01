@@ -1,7 +1,7 @@
 package edu.grinnell.csc207.fletcher1.hw5;
 
-import edu.grinnell.glimmer.ushahidi.*;
 import java.io.*;
+import edu.grinnell.glimmer.ushahidi.*;
 
 public class PrintIncidentExperiment {
 	 public static void main(String[] args) throws Exception{

@@ -13,4 +13,23 @@ public class UshahidiExtensions {
 				+ event.getVerified() + ")");
 	} // printIncident(PrintWriter, UshahidiIncident)
 	
+	public static void UshahidiIncidentList() {
+		
+	}
+	
+	public static void extremeIncidents(UshahidiClient client) {
+		int currentId;
+		UshahidiIncidentList();
+		
+		for (client.hasMoreIncidents();;) {
+			
+			
+			
+		}
+	}
+	
+	public static void identifyIncidents() {
+		
+	}
+	
 } // UshahidiExtensions
