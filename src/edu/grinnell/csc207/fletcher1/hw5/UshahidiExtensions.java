@@ -10,8 +10,8 @@ public class UshahidiExtensions {
 		pen.println("Incident #: "+ event.getTitle()
 				+ "\n  " + event.getDescription()
 				+ "\n  Location: "+ event.getLocation()
-				+ "\n  Status: (" + event.getMode() + event.getActive() 
-				+ event.getVerified() + ")"
+				+ "\n  Status: (" + event.getMode() + ", " + event.getActive() 
+				+ ", " + event.getVerified() + ")"
 				+ "\n");
 	} // printIncident(PrintWriter, UshahidiIncident)
 	
